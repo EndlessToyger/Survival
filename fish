@@ -3,8 +3,14 @@
 # Setup the embed
 base = f'embed -title "{name} goes fishing!" -color {color} -thumb {image} -desc "Fishing is a complicated process. You need to find a good spot, choose the right bait, hook a fish and bring it in, then gut and clean the fish to harvest the meat. There\'s a reason they don\'t call it catching, y\'know."'
 
-# Load svars
-fishdata = load_json(get_svar("FishSpecies", '[{"species": "Catfish", "weight": 20, "percent": 0, "DC": 10}, {"species": "Bass", "weight": 5, "percent": 35, "DC": 5}, {"species": "Carp", "weight": 10, "percent": 60, "DC": 5}, {"species": "Salmon", "weight": 25, "percent": 75, "DC": 15}, {"species": "Sturgeon", "weight": 100, "percent": 90, "DC": 15}]'))
+# Load svars (Separated for species visability)
+fishdata = load_json(get_svar("FishSpecies", \
+'[{"species": "Catfish", "weight": 20, "percent": 0, "DC": 10}, \
+{"species": "Bass", "weight": 5, "percent": 35, "DC": 5},\
+{"species": "Carp", "weight": 10, "percent": 60, "DC": 5},\
+{"species": "Salmon", "weight": 25, "percent": 75, "DC": 15},\
+{"species": "Sturgeon", "weight": 100, "percent": 90, "DC": 15}]'))
+
 settings = load_json(get_svar("SurvSettings", '{"fishFind": [10,50,80,95], "fishHarvDC": 20, "huntFind": [10,45,75,90], "huntHarvDC": 22, "foraFind": [15,40,85,90], "foraHarvDC": 17, "harvest": true, "cooldown": false, "coolTime": 0, "fishCool": false, "fishCoolTime": 0, "huntCool": false, "huntCoolTime": 0, "forageCool": false, "forageCoolTime": 0}'))
 
 # Error on empty fishdata
